@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:textAlignment="center"
+        android:id="@+id/ImageTitle"
+        android:padding="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_below="@id/ImageTitle"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_height="match_parent"
+        android:id="@+id/DownloadingMessage">
+
+        <TextView
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/downloading_image_message"/>
+
+        <ProgressBar
+            android:layout_gravity="center"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/DownloadProgressBar"
+            android:indeterminate="false"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:progress="0"/>
+    </LinearLayout>
+
+    <ImageView
+        android:padding="3dp"
+        android:layout_below="@id/ImageTitle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ImagePhoto"/>
+</RelativeLayout>

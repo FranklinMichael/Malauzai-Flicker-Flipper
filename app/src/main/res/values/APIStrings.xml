@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- API Strings -->
+    <string name="api_domain">api.flickr.com</string>
+    <string name="api_dev_domain">api.flickr.com</string>
+    <string name="api_scheme">https</string>
+    <string name="api_dev_scheme">https</string>
+    <!-- API Failed Token Strings -->
+    <string name="api_failed_data">FailedIntentData</string>
+    <string name="api_failed_packagefor">FailedIntentPackageFor</string>
+    <string name="api_failed_url">FailedIntentUrl</string>
+    <!-- API Response Categories -->
+    <string name="api_error_NotFound">Page Not Found</string>
+    <string name="api_error_unhandled">Unhandled Error</string>
+    <string name="api_error_timedout">Timed Out</string>
+    <string name="api_error_noHost">Unknown Host</string>
+    <string name="api_response_ok">OK</string>
+    <!-- end of API Strings -->
+
+    <!-- Per Application Strings -->
+    <!-- API Endpoints -->
+    <string name="public_photos_endpoint">services/feeds/photos_public.gne</string>
+    <!-- API Response Request Packages -->
+    <string name="packagefor_main">ForMain</string>
+    <!-- API Data Keys -->
+    <string name="api_key_format_type">format</string>
+    <string name="api_data_format_type">json</string>
+    <string name="api_key_photo_list">items</string>
+    <string name="api_key_photo_title">title</string>
+    <string name="api_key_photo_image">media</string>
+</resources>

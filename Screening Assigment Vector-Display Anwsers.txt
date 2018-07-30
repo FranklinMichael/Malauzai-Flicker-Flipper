@@ -1,0 +1,98 @@
+////////////////// Anwser 1 //////////////////
+// Private?
+Shape A;
+Shape B;
+// Public
+int area(Shape X);
+int overlapping_area(Shape C, Shape Y);
+
+boolean IsFullyOverlapping(Shape C, Shape Y)
+{
+	int OverlapArea = overlapping_area(C,Y);
+	(area(C) <= OverlapArea || area(Y) <= OverlapArea) ? return true : return false;
+}
+///////////////// End of Anwser 1 ///////////////
+
+///////////////// Anwser 2 //////////////////////
+// Private
+List<char> ListA = List.of('A','3','u','y','2');
+List<char> ListB = List.of('A','V','u','3','V','3');
+
+// Public
+void FindSharedChars(List ListA, List ListB)
+{
+	JSONArry CharsFound = new JSONArray(); // OBJ ("Char":<char>,"Num",<int>)
+	
+	// Find Matches
+	for(int i = 0;i < ListA.size();i++)
+	{
+		bool Matched = false;
+		// check if matched once already
+		for (int b = 0;b < CharsFound.size();b++)
+		{
+			JSONObject Obj = CharsFound.getJSONObject(b);
+			if ((Obj.getChar("Char") != null) && (ListA.get(i) == Obj.getChar("Char")))
+			{
+				// already matched
+				Matched = true;
+				// increase match count
+				Obj.getInt("Num") = Obj.getInt("Num") + 1;
+				break;
+			}
+		}
+		
+		if (Matched)
+			continue;
+		
+		// not matched yet. check for match
+		Matched = false;
+		for (int b = 0;b < ListB.size();b++)
+		{
+			if (ListA.get(i) == ListB.get(b))
+			{
+				Matched = true;
+				break;
+			}
+		}
+		
+		if (Matched)
+		{
+			// Add Match to Array
+			JSONObject Match = new JSONObject();
+			Match.put("Char",List.get(i));
+			Match.put("Num",1);
+			CharsFound.add(Match);
+		}
+	}
+	
+	// Count Remaining Matches in ListB
+	for(int i = 0;i < ListB.size();i++)
+	{
+		// find match
+		for (int b = 0;b < CharsFound.size();b++)
+		{
+			JSONObject Obj = CharsFound.getJSONObject(b);
+			if ((Obj.getChar("Char") != null) && (ListA.get(i) == Obj.getChar("Char")))
+			{
+				// increase match count
+				Obj.getInt("Num") = Obj.getInt("Num") + 1;
+				break;
+			}
+		}
+	}
+	
+	// Use CharsFound to output Result
+	String Output = "";
+	for (int i = 0;i < CharsFound.size();i++)
+	{
+		JSONObject Obj = CharsFound.getJSONObject(b);
+		
+		if (Output == "")
+			Output = Output + Obj.getChar("Char") + ":" + Obj.getInt("Num");
+		else
+			Output = Output + "," + Obj.getChar("Char") + ":" + Obj.getInt("Num");
+	}
+	print("Found Matches: " + Output);
+}
+//////////// End of Anwser 2 //////////////
+

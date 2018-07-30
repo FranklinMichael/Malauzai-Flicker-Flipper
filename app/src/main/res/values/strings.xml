@@ -1,0 +1,17 @@
+<resources>
+    <!-- General Strings -->
+    <string name="app_name">Malauzai Flicker Flipper</string>
+    <string name="photo_data_filename">PhotoData.phdata</string>
+    <string name="credits">By Michael Franklin</string>
+    <string name="credits_size">9dp</string>
+    <string name="title_size">14dp</string>
+
+    <!-- Storage Keys -->
+    <string name="store_key_photo_title">title</string>
+    <string name="store_key_photo_image">url</string>
+
+    <!-- Layout Strings -->
+    <string name="main_downloading_data">Downloading Photo List...\nPlease Wait.</string>
+    <string name="downloading_image_message">Downloading Image...\nPlease Wait.</string>
+
+</resources>
